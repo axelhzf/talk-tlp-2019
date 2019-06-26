@@ -1,0 +1,23 @@
+{
+  "name": "talk-tlp-2019",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "rm -rf docs && parcel build --no-cache -d docs --public-url . index.html",
+    "deploy": "npm run build && git add . && git commit -m deploy && git push"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.4.5",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "^1.18.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-tweet-embed": "^1.2.2",
+    "screenshot-tweet": "^1.1.1",
+    "spectacle": "^5.5.0"
+  }
+}

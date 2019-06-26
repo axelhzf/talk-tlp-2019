@@ -1,0 +1,17 @@
+a {
+    border-bottom: 4px solid #3490DC;
+    text-decoration: none;
+    color: #3490DC;
+    padding: 3px;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    height: 500px;
+}
+
+.tweet {
+    display: flex;
+    justify-content: center;
+}
