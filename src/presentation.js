@@ -36,7 +36,7 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading size={2}>
             <S type="bold" textColor={colors.blue.base}>
-              [] = useReact()
+              Animating React
             </S>
           </Heading>
           <Text margin="40px 0 0 0">
