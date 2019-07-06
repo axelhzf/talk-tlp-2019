@@ -16,6 +16,8 @@
     "react": "^16.8.6",
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
-    "react-twitter-embed": "^2.0.8"
+    "react-spring": "^8.0.27",
+    "react-twitter-embed": "^2.0.8",
+    "react-with-gesture": "^4.0.8"
   }
 }

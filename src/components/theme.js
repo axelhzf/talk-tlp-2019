@@ -79,6 +79,12 @@ export function ThemeGlobal() {
       styles={css`
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap');
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&display=swap');
+        
+        html {
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
       `}
     />
   );

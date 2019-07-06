@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './Button';
 
 export function BasicAnimation() {
   const [pos, setPos] = React.useState(0);
@@ -17,7 +18,7 @@ export function BasicAnimation() {
             })}
           />
         </div>
-        <button
+        <Button
           onClick={() => {
             if (pos === 0) {
               setPos('-150px');
@@ -27,7 +28,7 @@ export function BasicAnimation() {
           }}
         >
           Animate
-        </button>
+        </Button>
       </div>
       <pre>
         <code>{`

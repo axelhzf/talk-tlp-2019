@@ -1,32 +1,36 @@
 import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
-export { theme } from './components/theme'
-import { Reference } from './components/Reference'
-import { ThemeGlobal } from './components/theme'
+export { theme } from './components/theme';
+import { Reference } from './components/Reference';
+import { ThemeGlobal } from './components/theme';
 import { BasicAnimation } from './components/BasicAnimation';
 import { LinearInterpolationChart } from './components/LinearInterpolationChart';
 import { AnimatingProperties } from './components/AnimatingProperties';
 import { BezierCurveDevtools } from './components/BezierCurveDevtools';
 import { Keyframes } from './components/Keyframes';
+import { SlideCss } from './components/SlideCss';
+import { SlideSpring } from './components/SlideSpring';
 import { Flex, Box } from '@rebass/emotion';
 import { Split } from 'mdx-deck/layouts';
 
-<ThemeGlobal/>
+<ThemeGlobal />
 
 # Animating React
- Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
+
+Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
 
 ---
 
 # Agenda
 
-* Why Animations?
-* CSS Animations
-* Spring Based Animations
-* Experiments
+- Why Animations?
+- CSS Animations
+- Spring Based Animations
+- Experiments
 
 ---
 
 # Disclamer:
+
 ## I am not a motion designer
 
 ---
@@ -51,7 +55,6 @@ The tools for native animations are superior
 
 TODO improve
 
-
 ---
 
 ### CSS Animations
@@ -69,28 +72,28 @@ CSS transition
         ;
     }
 
-
 ---
 
-<BasicAnimation/>
+<BasicAnimation />
 
 ---
 
 ### Animated Properties
 
-<AnimatingProperties/>
+<AnimatingProperties />
 
-<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">CSS Animated Properties</Reference>
+<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">
+  CSS Animated Properties
+</Reference>
 
 ---
 
 ### Timing functions
 
-
 <Flex>
 <Flex flexDirection="column">
 
-![](images/linear.png)
+![](assets/linear.png)
 
 linear
 
@@ -98,36 +101,37 @@ linear
 
 <Flex flexDirection="column">
 
-![](images/ease.png)
+![](assets/ease.png)
 
 ease
 
 </Flex>
 <Flex flexDirection="column">
 
-![](images/ease-in.png)
+![](assets/ease-in.png)
 
 ease-in
 
 </Flex>
 <Flex flexDirection="column">
 
-![](images/ease-out.png)
+![](assets/ease-out.png)
 
 ease-out
 
 </Flex>
 <Flex flexDirection="column">
 
-![](images/ease-in-out.png)
+![](assets/ease-in-out.png)
 
 ease-in-out
 
 </Flex>
 </Flex>
 
-
-<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function">MDN Timing Functions</Reference>
+<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function">
+  MDN Timing Functions
+</Reference>
 
 ---
 
@@ -135,21 +139,25 @@ ease-in-out
 
 A Bézier curve is a parametric curve used to model smooth curves
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/504c44ca5c5f1da2b6cb1702ad9d1afa27cc1ee0" width="200%" />
+<img
+  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/504c44ca5c5f1da2b6cb1702ad9d1afa27cc1ee0"
+  width="200%"
+/>
 
 <br/>
 <br/>
 
 ![](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
 
-<Reference href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves">Bezier Curves in Wikipedia</Reference>
+<Reference href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves">
+  Bezier Curves in Wikipedia
+</Reference>
 
 ---
 
 ## ease-in-out
 
-
-![](images/ease-in-out.png)
+![](assets/ease-in-out.png)
 
     cubic-bezier(0.42, 0.0, 0.58, 1.0)
 
@@ -163,18 +171,91 @@ https://cubic-bezier.com
 
 Devtools
 
-<BezierCurveDevtools/>
+<BezierCurveDevtools />
 
 ---
 
 Keyframes animations
 
-<Keyframes/>
+<Keyframes />
 
 ---
+
+Keyframes are powerful
+
+[https://codepen.io/davidkpiano/pen/kkpGWj](https://codepen.io/davidkpiano/pen/kkpGWj)
+
+---
+
+<SlideCss />
+
+---
+
+<Tweet tweetId="566736015188963328" />
+
+---
+
+<video autoPlay={true} loop={true} muted style={{width: '100vw', height: '100vh' }}>
+  <source src="assets/carbonMotionDuration.mp4" type="video/mp4" />
+</video>
+
+<Reference href="https://www.carbondesignsystem.com/guidelines/motion/basics#duration">
+  IBM Carbon Design System Motion
+</Reference>
+
+---
+
+<SlideSpring />
+
+---
+
+Spring based animations
+
+[Cheng Lou - the state of animation in React](https://www.youtube.com/watch?v=1tavDv5hXpo)
+
+---
+
+Spring based animations
+
+* I don't care about the current position. Give me the final value, I know the current momentum
+* Conserve the current animation's speed for me
+* Here the stiffness, damping and mass of this thing
+
+
+<Reference href="https://www.youtube.com/watch?v=1tavDv5hXpo">The state of animation in React</Reference>
+
+---
+
+### Spring Physics
+
+Hooke’s law expresses how springs extends and contract
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/66774554c5cee5c22c57b0950c06ded0d36da720" style={{ width: '50vw'}} />
+
+The force is proportional to the extension
+
+<Reference href="https://en.wikipedia.org/wiki/Hooke%27s_law#For_linear_springs">Hooke's law Wikipedia</Reference>
+
+---
+
+### Spring Physics
+
+There’s also this damping force which slows down the motion. Without it, the spring will keep oscillating forever.
+
+
+Ff = −cv
+
+
+<Reference href="https://en.wikipedia.org/wiki/Damping_ratio#Example:_mass.E2.80.93spring.E2.80.93damper">Dumping Force Wikipedia</Reference>
+
+---
+
+### Spring Physics
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7a4675e822d9c82d0e6a9443252d9b243970f4a4" style={{ width: '50vw'}} />
+
+<Reference href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">Harmonic Oscillator Wikipedia</Reference>
 
 ---
 
 > Animation is like cursing: If you overuse it, it loses all its impact.
-
-
