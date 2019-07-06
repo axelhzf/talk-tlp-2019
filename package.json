@@ -8,6 +8,8 @@
     "deploy": "npm run build && git add . && git commit -m deploy && git push"
   },
   "dependencies": {
+    "@emotion/styled": "^10.0.14",
+    "@rebass/emotion": "^3.1.1",
     "chart.js": "^2.8.0",
     "mdx-deck": "^2.4.0",
     "prettier": "^1.18.2",

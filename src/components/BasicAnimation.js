@@ -6,16 +6,16 @@ export function BasicAnimation() {
     <div>
       <div>
         <div css={{ display: 'flex', justifyContent: 'center' }}>
-        <div
-          css={theme => ({
-            width: 50,
-            height: 50,
-            borderRadius: '100% ',
-            backgroundColor: theme.colors.primary,
-            transform: `translateY(${pos})`,
-            transition: 'linear 300ms'
-          })}
-        />
+          <div
+            css={theme => ({
+              width: 50,
+              height: 50,
+              borderRadius: '100% ',
+              backgroundColor: theme.colors.primary,
+              transform: `translateY(${pos})`,
+              transition: 'transform linear 300ms'
+            })}
+          />
         </div>
         <button
           onClick={() => {
@@ -30,7 +30,11 @@ export function BasicAnimation() {
         </button>
       </div>
       <pre>
-        <code>transform: translate({pos});</code>
+        <code>{`
+transform: translate(${pos});
+transition: transform linear 300ms;
+`}
+        </code>
       </pre>
     </div>
   );

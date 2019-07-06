@@ -1,9 +1,12 @@
+import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
 export { theme } from './components/theme'
+import { Reference } from './components/Reference'
 import { ThemeGlobal } from './components/theme'
 import { BasicAnimation } from './components/BasicAnimation';
 import { LinearInterpolationChart } from './components/LinearInterpolationChart';
 import { AnimatingProperties } from './components/AnimatingProperties';
-import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
+import { BezierCurveDevtools } from './components/BezierCurveDevtools';
+import { Flex, Box } from '@rebass/emotion';
 
 <ThemeGlobal/>
 
@@ -49,7 +52,21 @@ TODO improve
 
 ---
 
-### What is an animation?
+### CSS Animations
+
+---
+
+CSS transition
+
+    div {
+        transition:
+            <property>
+            <duration>
+            <timing-function>
+            <delay>
+        ;
+    }
+
 
 ---
 
@@ -57,13 +74,94 @@ TODO improve
 
 ---
 
-<LinearInterpolationChart/>
+### Animated Properties
+
+<AnimatingProperties/>
+
+<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">CSS Animated Properties</Reference>
 
 ---
 
-### You can interpolate any property
+### Timing functions
 
-<AnimatingProperties/>
+
+<Flex>
+<Flex flexDirection="column">
+
+![](images/linear.png)
+
+linear
+
+</Flex>
+
+<Flex flexDirection="column">
+
+![](images/ease.png)
+
+ease
+
+</Flex>
+<Flex flexDirection="column">
+
+![](images/ease-in.png)
+
+ease-in
+
+</Flex>
+<Flex flexDirection="column">
+
+![](images/ease-out.png)
+
+ease-out
+
+</Flex>
+<Flex flexDirection="column">
+
+![](images/ease-in-out.png)
+
+ease-in-out
+
+</Flex>
+</Flex>
+
+
+<Reference href="https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function">MDN Timing Functions</Reference>
+
+---
+
+## cubic-bezier
+
+A Bézier curve is a parametric curve used to model smooth curves
+
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/504c44ca5c5f1da2b6cb1702ad9d1afa27cc1ee0" width="200%" />
+
+<br/>
+<br/>
+
+![](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
+
+<Reference href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves">Bezier Curves in Wikipedia</Reference>
+
+---
+
+## ease-in-out
+
+
+![](images/ease-in-out.png)
+
+    cubic-bezier(0.42, 0.0, 0.58, 1.0)
+
+---
+
+Cubic-bezier playground
+
+https://cubic-bezier.com
+
+---
+
+Devtools
+
+<BezierCurveDevtools/>
 
 ---
 

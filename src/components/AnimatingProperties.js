@@ -1,8 +1,10 @@
-import { keyframes} from '@emotion/core';
+import { keyframes } from '@emotion/core';
+import { Ball } from './Ball';
+import { Square } from './Square';
 
 export function AnimatingProperties() {
   return (
-    <div css={{ display: 'flex', width: '100%' }}>
+    <div css={{ display: 'flex', minWidth: '100vw' }}>
       <Column>
         <p><code>opacity</code></p>
         <Ball css={{ animation: `${opacity} 1s infinite;` }}/>
@@ -51,32 +53,4 @@ const rotate = keyframes`
 
 function Column(props) {
   return <div {...props} css={{ flex: 1, alignItems: 'center', display: 'flex', flexDirection: 'column' }} />
-}
-
-
-function Ball(props) {
-  return (
-    <div
-      {...props}
-      css={theme => ({
-        width: 50,
-        height: 50,
-        borderRadius: '100% ',
-        backgroundColor: theme.colors.primary
-      })}
-    />
-  );
-}
-
-function Square(props) {
-  return (
-    <div
-      {...props}
-      css={theme => ({
-        width: 50,
-        height: 50,
-        backgroundColor: theme.colors.primary
-      })}
-    />
-  );
 }
