@@ -155,6 +155,10 @@ Explicar el problema que hay con ese tipo de animaciones
 
 * Ejemplo de animaciones utilizando react spring
 
+* Unmount animations
+* Animating auto
+* Use trail
+* Use Chain
 
 Beneficios de utilizar react-spring es que es multiplataforma, código de react native utilizando react-spring?
 

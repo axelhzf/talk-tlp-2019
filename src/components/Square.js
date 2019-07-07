@@ -1,6 +1,8 @@
+import { animated } from 'react-spring';
+
 export function Square(props) {
   return (
-    <div
+    <animated.div
       {...props}
       css={theme => ({
         width: 50,
