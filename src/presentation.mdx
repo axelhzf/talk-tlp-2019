@@ -1,4 +1,7 @@
 import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
+import { Flex, Box } from '@rebass/emotion';
+import { Split } from 'mdx-deck/layouts';
+
 export { theme } from './components/theme';
 import { Reference } from './components/Reference';
 import { ThemeGlobal } from './components/theme';
@@ -11,10 +14,8 @@ import { SlideCss } from './components/SlideCss';
 import { SlideSpring } from './components/SlideSpring';
 import { SpringPresets } from './components/SpringPresets';
 import { UnmountAnimation } from './components/UnmountAnimation';
+import { AutoAnimation } from './components/AutoAnimation';
 
-
-import { Flex, Box } from '@rebass/emotion';
-import { Split } from 'mdx-deck/layouts';
 
 <ThemeGlobal />
 
@@ -266,11 +267,27 @@ Ff = −cv
 
 <SpringPresets />
 
+<Reference href="https://www.react-spring.io/docs/hooks/api">React Spring Api</Reference>
+
 ---
 
 ### Unmount Animations
 
 <UnmountAnimation/>
+
+---
+
+Auto Animations
+
+<AutoAnimation/>
+
+---
+
+### Trail Animations
+
+---
+
+### Chain Animations
 
 ---
 
