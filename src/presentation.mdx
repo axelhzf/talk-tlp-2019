@@ -16,7 +16,6 @@ import { SpringPresets } from './components/SpringPresets';
 import { UnmountAnimation } from './components/UnmountAnimation';
 import { AutoAnimation } from './components/AutoAnimation';
 
-
 <ThemeGlobal />
 
 # Animating React
@@ -200,7 +199,12 @@ Keyframes are powerful
 
 ---
 
-<video autoPlay={true} loop={true} muted style={{width: '100vw', height: '100vh' }}>
+<video
+  autoPlay={true}
+  loop={true}
+  muted
+  style={{ width: '100vw', height: '100vh' }}
+>
   <source src="assets/carbonMotionDuration.mp4" type="video/mp4" />
 </video>
 
@@ -222,12 +226,13 @@ Spring based animations
 
 Spring based animations
 
-* I don't care about the current position. Give me the final value, I know the current momentum
-* Conserve the current animation's speed for me
-* Here the stiffness, damping and mass of this thing
+- I don't care about the current position. Give me the final value, I know the current momentum
+- Conserve the current animation's speed for me
+- Here the stiffness, damping and mass of this thing
 
-
-<Reference href="https://www.youtube.com/watch?v=1tavDv5hXpo">The state of animation in React</Reference>
+<Reference href="https://www.youtube.com/watch?v=1tavDv5hXpo">
+  The state of animation in React
+</Reference>
 
 ---
 
@@ -235,11 +240,16 @@ Spring based animations
 
 Hooke’s law expresses how springs extends and contract
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/66774554c5cee5c22c57b0950c06ded0d36da720" style={{ width: '50vw'}} />
+<img
+  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/66774554c5cee5c22c57b0950c06ded0d36da720"
+  style={{ width: '50vw' }}
+/>
 
 The force is proportional to the extension
 
-<Reference href="https://en.wikipedia.org/wiki/Hooke%27s_law#For_linear_springs">Hooke's law Wikipedia</Reference>
+<Reference href="https://en.wikipedia.org/wiki/Hooke%27s_law#For_linear_springs">
+  Hooke's law Wikipedia
+</Reference>
 
 ---
 
@@ -247,19 +257,24 @@ The force is proportional to the extension
 
 There’s also this damping force which slows down the motion. Without it, the spring will keep oscillating forever.
 
-
 Ff = −cv
 
-
-<Reference href="https://en.wikipedia.org/wiki/Damping_ratio#Example:_mass.E2.80.93spring.E2.80.93damper">Dumping Force Wikipedia</Reference>
+<Reference href="https://en.wikipedia.org/wiki/Damping_ratio#Example:_mass.E2.80.93spring.E2.80.93damper">
+  Dumping Force Wikipedia
+</Reference>
 
 ---
 
 ### Spring Physics
 
-<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7a4675e822d9c82d0e6a9443252d9b243970f4a4" style={{ width: '50vw'}} />
+<img
+  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7a4675e822d9c82d0e6a9443252d9b243970f4a4"
+  style={{ width: '50vw' }}
+/>
 
-<Reference href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">Harmonic Oscillator Wikipedia</Reference>
+<Reference href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">
+  Harmonic Oscillator Wikipedia
+</Reference>
 
 ---
 
@@ -267,19 +282,21 @@ Ff = −cv
 
 <SpringPresets />
 
-<Reference href="https://www.react-spring.io/docs/hooks/api">React Spring Api</Reference>
+<Reference href="https://www.react-spring.io/docs/hooks/api">
+  React Spring Api
+</Reference>
 
 ---
 
 ### Unmount Animations
 
-<UnmountAnimation/>
+<UnmountAnimation />
 
 ---
 
 Auto Animations
 
-<AutoAnimation/>
+<AutoAnimation />
 
 ---
 

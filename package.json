@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "mdx-deck src/presentation.mdx",
-    "build": "rm -rf docs && parcel build --no-cache -d docs --public-url . index.html",
+    "build": "rm -rf docs && mdx-deck build --d docs src/presentation.mdx",
     "deploy": "npm run build && git add . && git commit -m deploy && git push"
   },
   "dependencies": {
