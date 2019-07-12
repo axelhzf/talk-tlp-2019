@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "start": "mdx-deck src/presentation.mdx",
-    "clean": "find docs ! -name 'CNAME' -type f -exec rm -f {} +",
-    "build": "yarn clean && mdx-deck build --d docs src/presentation.mdx",
-    "deploy": "yarn build && git add . && git commit -m deploy && git push"
+    "clean": "rm -rf dist",
+    "build": "mdx-deck build --d dist src/presentation.mdx",
+    "deploy": "yarn build && now --target production"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.14",

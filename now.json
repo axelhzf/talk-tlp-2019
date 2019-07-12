@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "alias": "talk-tlp-2019.axelhzf.com",
+  "builds": [
+    {
+      "src": "dist/**",
+      "use": "@now/static"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "dist/$1" }
+  ]
+}
