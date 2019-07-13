@@ -1,10 +1,11 @@
 import React from 'react';
-import { future, swiss } from '@mdx-deck/themes';
+import { future } from '@mdx-deck/themes';
 import { Global, css } from '@emotion/core';
 import { colors } from './colors';
-import { Flex, Box } from '@rebass/emotion';
+import { Box } from '@rebass/emotion';
 import { syntaxHighlighterPrism } from '@mdx-deck/themes'
 import { prismTheme } from './prismTheme';
+import { Analytics } from './Analytics';
 
 export const theme = syntaxHighlighterPrism({
   ...future,
@@ -91,6 +92,17 @@ export const theme = syntaxHighlighterPrism({
   },
   Slide: {
     padding: '1em'
+  },
+  Provider: (props) => {
+    React.useEffect(() => {
+      document.title = 'Animating React';
+    }, []);
+    return (
+      <>
+        <div {...props} />
+        <Analytics/>
+      </>
+    )
   }
 });
 
