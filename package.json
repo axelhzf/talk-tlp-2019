@@ -18,8 +18,12 @@
     "react-chartjs-2": "^2.7.6",
     "react-dom": "^16.8.6",
     "react-spring": "^8.0.27",
+    "react-three-fiber": "^2.2.11",
     "react-twitter-embed": "^2.0.8",
     "react-with-gesture": "^4.0.8",
-    "resize-observer-polyfill": "^1.5.1"
+    "react-zdog": "^1.0.10",
+    "resize-observer-polyfill": "^1.5.1",
+    "three": "^0.106.2",
+    "zdog": "^1.1.0"
   }
 }
