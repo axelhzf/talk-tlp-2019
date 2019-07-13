@@ -99,7 +99,9 @@ export const theme = syntaxHighlighterPrism({
     }, []);
     return (
       <>
-        <div {...props} />
+        <div>
+          {props.children}
+        </div>
         <Analytics/>
       </>
     )
