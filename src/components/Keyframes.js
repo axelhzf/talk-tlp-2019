@@ -5,7 +5,7 @@ import {Flex, Box } from '@rebass/emotion';
 
 export function Keyframes() {
   return (
-    <Flex width="100vw">
+    <Flex width="calc(100vw - 60px)">
       <Flex flex="1" justifyContent="flex-end" mr={50}>
         <Square css={{ animation: `${fancy} 4s ease-in-out infinite;` }} />
       </Flex>

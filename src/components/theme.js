@@ -1,11 +1,13 @@
+import React from 'react';
 import { future, swiss } from '@mdx-deck/themes';
 import { Global, css } from '@emotion/core';
+import { colors } from './colors';
+import { Flex, Box } from '@rebass/emotion';
 
 export const theme = {
   ...future,
-  font: '"IBM Plex Sans", system-ui, sans-serif',
   colors: {
-    background: '#f3f3f3',
+    background: '#ffffff',
     blue: '#0062ff',
     code: '#0062ff',
     link: '#6ea6ff',
@@ -66,11 +68,42 @@ export const theme = {
     brand3: '#0062ff',
     active1: '#bebebe',
     hoverField: '#e5e5e5'
-
   },
   heading: {
-    fontWeight: 600
+    fontWeight: 600,
+    color: '#171717',
+    textAlign: 'left'
+  },
+  h1: {
+    textDecoration: 'underline',
+    textDecorationColor: colors.blue30
+  },
+  h2: {},
+  blockquote: {
+    textAlign: 'left',
+    fontSize: '150%',
+    borderLeft: `8px solid ${colors.blue30}`,
+    paddingLeft: 20
+  },
+  Slide: {
+    padding: 20
   }
+};
+
+export const Layout = props => {
+  return (
+    <Box
+      {...props}
+      css={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '100vw',
+        height: '100vh'
+      }}
+    />
+  );
 };
 
 export function ThemeGlobal() {
@@ -79,7 +112,7 @@ export function ThemeGlobal() {
       styles={css`
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap');
         @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400&display=swap');
-        
+
         html {
           text-rendering: optimizeLegibility;
           -webkit-font-smoothing: antialiased;

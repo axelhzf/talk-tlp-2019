@@ -48,9 +48,6 @@ export function SlideSpring() {
           }}
         />
       </div>
-      <pre>
-        <code>{`useSpring()`}</code>
-      </pre>
     </Flex>
   );
 }

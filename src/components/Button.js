@@ -9,6 +9,7 @@ export function Button(props) {
         fontSize: 16,
         cursor: 'pointer',
         borderRadius: 4,
+        outline: 'none',
         '&:hover': {
           background: theme.colors.hoverPrimary
         }

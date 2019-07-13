@@ -1,10 +1,10 @@
-import { TwitterTweetEmbed as Tweet } from 'react-twitter-embed';
 import { Flex, Box } from '@rebass/emotion';
 import { Split } from 'mdx-deck/layouts';
 
 export { theme } from './components/theme';
+import { Tweet } from './components/Tweet';
+import { Layout, ThemeGlobal } from './components/theme';
 import { Reference } from './components/Reference';
-import { ThemeGlobal } from './components/theme';
 import { BasicAnimation } from './components/BasicAnimation';
 import { LinearInterpolationChart } from './components/LinearInterpolationChart';
 import { AnimatingProperties } from './components/AnimatingProperties';
@@ -18,6 +18,7 @@ import { AutoAnimation } from './components/AutoAnimation';
 import { TrailAnimation } from './components/TrailAnimation';
 import { ChainAnimation } from './components/ChainAnimation';
 import { Zdog } from './components/Zdog';
+import { Three } from './components/Three';
 
 <ThemeGlobal />
 
@@ -29,30 +30,29 @@ Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
 
 # Agenda
 
-- Why Animations?
+- Why animation matters?
 - CSS Animations
 - Spring Based Animations
-- Experiments
 
 ---
 
-# Disclamer:
+# Disclaimer:
 
 ## I am not a motion designer
 
 ---
 
-Why native feels better than web apps?
+## Why native feels better than web apps?
 
 ---
 
-Animations using SwiftUI
+# Animations using SwiftUI
 
 <Tweet tweetId="1142539362875392001" />
 
 ---
 
-The tools for native animations are superior
+# The tools for native animations are superior
 
 <Tweet tweetId="1145465025194332165" />
 
@@ -60,15 +60,29 @@ The tools for native animations are superior
 
 # Why animation matters?
 
-TODO improve
+- Motion helps make a UI expressive
+- Motion helps orient users by showing how elements are related to one another
+- Motion focuses attention on what's important
 
 ---
 
-### CSS Animations
+# Where to start?
 
 ---
 
-CSS transition
+# Use the platform
+
+<Reference href="https://dev.to/richharris/why-i-don-t-use-web-components-2cia">
+  Why I don't use web components by Rich Harris
+</Reference>
+
+---
+
+# CSS Animations
+
+---
+
+# CSS transition
 
     div {
         transition:
@@ -81,11 +95,13 @@ CSS transition
 
 ---
 
+# CSS Animations
+
 <BasicAnimation />
 
 ---
 
-### Animated Properties
+# Animated Properties
 
 <AnimatingProperties />
 
@@ -95,7 +111,7 @@ CSS transition
 
 ---
 
-### Timing functions
+# Timing functions
 
 <Flex>
 <Flex flexDirection="column">
@@ -142,7 +158,7 @@ ease-in-out
 
 ---
 
-## cubic-bezier
+# cubic-bezier
 
 A Bézier curve is a parametric curve used to model smooth curves
 
@@ -162,7 +178,7 @@ A Bézier curve is a parametric curve used to model smooth curves
 
 ---
 
-## ease-in-out
+# ease-in-out
 
 ![](assets/ease-in-out.png)
 
@@ -170,29 +186,46 @@ A Bézier curve is a parametric curve used to model smooth curves
 
 ---
 
-Cubic-bezier playground
+# Cubic-bezier playground
 
 https://cubic-bezier.com
 
 ---
 
-Devtools
+# Devtools
 
 <BezierCurveDevtools />
 
 ---
 
-Keyframes animations
+# Keyframes animations
 
 <Keyframes />
 
 ---
 
-Keyframes are powerful
+# Keyframes are powerful
 
 [https://codepen.io/davidkpiano/pen/kkpGWj](https://codepen.io/davidkpiano/pen/kkpGWj)
 
 ---
+
+# Web Animations API
+
+
+```
+var keyframes = [
+  { opacity: 0 },
+  { opacity: 1 }
+];
+element.animate(keyframes, 1000);
+```
+
+<Reference href="https://css-tricks.com/css-animations-vs-web-animations-api/">CSS Animations vs Web Animations API</Reference>
+
+---
+
+# User interactions
 
 <SlideCss />
 
@@ -217,19 +250,30 @@ Keyframes are powerful
 
 ---
 
+# IBM Motion Generator
+
+https://ibm.github.io/motion/
+
+🤦‍♂️
+
+---
+
+# User interactions
+
 <SlideSpring />
 
 ---
 
-Spring based animations
+# Spring based animations
 
 [Cheng Lou - the state of animation in React](https://www.youtube.com/watch?v=1tavDv5hXpo)
 
 ---
 
-Spring based animations
+# Spring based animations
 
-- I don't care about the current position. Give me the final value, I know the current momentum
+- Give me the final value
+- I know the current momentum
 - Conserve the current animation's speed for me
 - Here the stiffness, damping and mass of this thing
 
@@ -239,14 +283,11 @@ Spring based animations
 
 ---
 
-### Spring Physics
+# Spring Physics
 
 Hooke’s law expresses how springs extends and contract
 
-<img
-  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/66774554c5cee5c22c57b0950c06ded0d36da720"
-  style={{ width: '50vw' }}
-/>
+<img src="/assets/hooke.svg" style={{ width: '30vw' }} />
 
 The force is proportional to the extension
 
@@ -256,9 +297,9 @@ The force is proportional to the extension
 
 ---
 
-### Spring Physics
+# Spring Physics
 
-There’s also this damping force which slows down the motion. Without it, the spring will keep oscillating forever.
+There’s also this damping force which slows down the motion.
 
 Ff = −cv
 
@@ -268,12 +309,9 @@ Ff = −cv
 
 ---
 
-### Spring Physics
+# Spring Physics
 
-<img
-  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7a4675e822d9c82d0e6a9443252d9b243970f4a4"
-  style={{ width: '50vw' }}
-/>
+<img src="assets/harmonic.svg" style={{ width: '50vw' }} />
 
 <Reference href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">
   Harmonic Oscillator Wikipedia
@@ -281,7 +319,25 @@ Ff = −cv
 
 ---
 
-### Spring Presets
+<Layout bg="#F0F3FF">
+
+# react-spring
+
+![](assets/react-spring.png)
+
+https://www.react-spring.io
+
+</Layout>
+
+---
+
+# useSpring()
+
+<SlideSpring />
+
+---
+
+# Spring Presets
 
 <SpringPresets />
 
@@ -291,47 +347,56 @@ Ff = −cv
 
 ---
 
-### Unmount Animations
+# Unmount Animations
 
 <UnmountAnimation />
 
 ---
 
-Auto Animations
+# Auto Animations
 
 <AutoAnimation />
 
 ---
 
-### Trail Animations
+# Trail Animations
 
-<TrailAnimation/>
+<TrailAnimation />
 
 ---
 
-### Chain Animations
+# Chain Animations
 
 <ChainAnimation />
 
 ---
 
-### Zdog animations?
+# Animating Zdog
 
-<Zdog/>
+<Zdog />
 
 https://codesandbox.io/s/nervous-feather-vk9uh
 
 ---
 
-### Threejs animation
+# Animating Threejs
 
-
+<Three />
 
 ---
 
-### Shaders animations
+# How to create awesome animations
 
+- Follow guidelines like [Material](https://material.io/design/motion/) or [Carbon](https://www.carbondesignsystem.com/guidelines/motion/basics)
+- Try to reproduce existing animations
+- Don't forget that animations needs to have a purpose
 
 ---
 
 > Animation is like cursing: If you overuse it, it loses all its impact.
+
+---
+
+# Questions?
+
+[@axelhzf](http://twitter.com/axelhzf)

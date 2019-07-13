@@ -4,7 +4,7 @@ import { Square } from './Square';
 
 export function AnimatingProperties() {
   return (
-    <div css={{ display: 'flex', minWidth: '100vw' }}>
+    <div css={{ display: 'flex', minWidth: '100%' }}>
       <Column>
         <p><code>opacity</code></p>
         <Ball css={{ animation: `${opacity} 1s infinite;` }}/>

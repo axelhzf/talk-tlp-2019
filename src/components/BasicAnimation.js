@@ -6,7 +6,7 @@ export function BasicAnimation() {
   return (
     <div>
       <div>
-        <div css={{ display: 'flex', justifyContent: 'center' }}>
+        <div css={{ display: 'flex', justifyContent: 'center', height: 200 }}>
           <div
             css={theme => ({
               width: 50,
@@ -21,7 +21,7 @@ export function BasicAnimation() {
         <Button
           onClick={() => {
             if (pos === 0) {
-              setPos('-150px');
+              setPos('150px');
             } else {
               setPos(0);
             }
