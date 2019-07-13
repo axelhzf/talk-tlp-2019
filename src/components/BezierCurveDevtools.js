@@ -1,9 +1,17 @@
 import { keyframes } from '@emotion/core';
 import { Square } from './Square';
+import { gradients } from './colors';
 
 export function BezierCurveDevtools() {
   return (
-    <Square css={{ animation: `${translateX} 3s infinite cubic-bezier(0.42, 0.0, 0.58, 1.0);` }}/>
+    <Square
+      css={{
+        width: 150,
+        height: 150,
+        animation: `${translateX} 3s infinite cubic-bezier(0.42, 0.0, 0.58, 1.0);`,
+        background: gradients[8]
+      }}
+    />
   );
 }
 

@@ -35,7 +35,7 @@ export function SpringPresets() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: gradients[5],
+            background: gradients[4],
             transition: down ? undefined : 'left linear 1000ms',
             borderRadius: 10,
             userSelect: 'none',

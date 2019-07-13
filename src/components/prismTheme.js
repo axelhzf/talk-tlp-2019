@@ -1,107 +1,3 @@
-import { PrismTheme } from 'prism-react-renderer';
-
-export const a = {
-  plain: {
-    backgroundColor: '#171717',
-    color: '#fff'
-  },
-  styles: [
-    {
-      types: ['comment', 'prolog', 'doctype', 'cdata'],
-      style: {
-        color: '#bebebe'
-      }
-    },
-    {
-      types: ['punctuation'],
-      style: {
-        color: '#687985'
-      }
-    },
-    {
-      types: ['namespace'],
-      style: {
-        opacity: 0.7
-      }
-    },
-    {
-      types: ['tag', 'operator', 'number'],
-      style: {
-        color: '#6ea6ff'
-      }
-    },
-    {
-      types: ['property', 'function'],
-      style: {
-        color: '#9a86fd'
-      }
-    },
-    {
-      types: ['tag-id', 'selector', 'atrule-id'],
-      style: {
-        color: '#eeebff'
-      }
-    },
-    {
-      types: ['attr-name'],
-      style: {
-        color: '#92eeee'
-      }
-    },
-    {
-      types: [
-        'boolean',
-        'string',
-        'entity',
-        'url',
-        'attr-value',
-        'keyword',
-        'control',
-        'directive',
-        'unit',
-        'statement',
-        'regex',
-        'at-rule',
-        'placeholder',
-        'variable'
-      ],
-      style: {
-        color: '#bb8eff'
-      }
-    },
-    {
-      types: ['deleted'],
-      style: {
-        textDecorationLine: 'line-through'
-      }
-    },
-    {
-      types: ['inserted'],
-      style: {
-        textDecorationLine: 'underline'
-      }
-    },
-    {
-      types: ['italic'],
-      style: {
-        fontStyle: 'italic'
-      }
-    },
-    {
-      types: ['important', 'bold'],
-      style: {
-        fontWeight: 'bold'
-      }
-    },
-    {
-      types: ['important'],
-      style: {
-        color: '#c4b9fe'
-      }
-    }
-  ]
-};
-
 export const prismTheme = {
   'code[class*="language-"]': {
     color: '#fff',
@@ -166,17 +62,16 @@ export const prismTheme = {
     Opacity: '.7'
   },
   property: {
-    color: '#96CBFE'
+    color: '#6ea6ff'
   },
   keyword: {
-    color: '#96CBFE'
+    color: '#6ea6ff'
   },
   tag: {
-    color: '#96CBFE'
+    color: '#6ea6ff'
   },
   'class-name': {
-    color: '#FFFFB6',
-    textDecoration: 'underline'
+    color: '#92eeee'
   },
   boolean: {
     color: '#99CC99'
@@ -191,25 +86,25 @@ export const prismTheme = {
     color: '#f92672'
   },
   number: {
-    color: '#FF73FD'
+    color: '#bb8eff'
   },
   selector: {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   'attr-name': {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   string: {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   char: {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   builtin: {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   inserted: {
-    color: '#A8FF60'
+    color: '#bb8eff'
   },
   variable: {
     color: '#C6C5FE'
@@ -222,7 +117,7 @@ export const prismTheme = {
     cursor: 'help'
   },
   url: {
-    color: '#96CBFE'
+    color: '#6ea6ff'
   },
   '.language-css .token.string': {
     color: '#87C38A'
@@ -231,19 +126,19 @@ export const prismTheme = {
     color: '#87C38A'
   },
   atrule: {
-    color: '#F9EE98'
+    color: '#92eeee'
   },
   'attr-value': {
-    color: '#F9EE98'
+    color: '#92eeee'
   },
   function: {
-    color: '#DAD085'
+    color: '#92eeee'
   },
   regex: {
-    color: '#E9C062'
+    color: '#92eeee'
   },
   important: {
-    color: '#fd971f',
+    color: '#92eeee',
     fontWeight: 'bold'
   },
   bold: {

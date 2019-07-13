@@ -1,21 +1,22 @@
 import { keyframes } from '@emotion/core';
 import { Ball } from './Ball';
 import { Square } from './Square';
+import { gradients } from './colors';
 
 export function AnimatingProperties() {
   return (
     <div css={{ display: 'flex', minWidth: '100%' }}>
       <Column>
         <p><code>opacity</code></p>
-        <Ball css={{ animation: `${opacity} 1s infinite;` }}/>
+        <Ball css={{ animation: `${opacity} 1s infinite;`, background: gradients[2] }}/>
       </Column>
       <Column>
         <p><code>scale</code></p>
-        <Ball css={{ animation: `${scale} 1s infinite;` }}/>
+        <Ball css={{ animation: `${scale} 1s infinite;`, background: gradients[3] }}/>
       </Column>
       <Column>
         <p><code>rotate</code></p>
-        <Square css={{ animation: `${rotate} 1s infinite;` }}/>
+        <Square css={{ animation: `${rotate} 1s infinite;`, background: gradients[4] }}/>
       </Column>
     </div>
   );

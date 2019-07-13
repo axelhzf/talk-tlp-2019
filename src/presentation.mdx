@@ -382,7 +382,7 @@ https://www.react-spring.io
 
 <FullScreenCode>
 
-```js
+```jsx
 import { useSpring, animated, interpolate } from 'react-spring';
 import { useGesture } from 'react-with-gesture';
 
@@ -429,7 +429,7 @@ function Component() {
 
 <FullScreenCode>
 
-```js
+```jsx
 import { useTransition } from 'react-spring';
 
 function Component() {
@@ -466,7 +466,7 @@ function Component() {
 
 <FullScreenCode>
 
-```js
+```jsx
 function TabPane(props) {
   const { isOpen } = props;
   const [bind, { height: viewHeight }] = useMeasure();
@@ -501,11 +501,15 @@ function TabPane(props) {
 
 <FullScreenCode>
 
-```js
+```jsx
 export function TrailAnimation() {
   const [toggle, setToggle] = React.useState(true);
   const items = ['A', 'B', 'C', 'D'];
-  const trail = useTrail(items.length, { opacity: toggle ? 1 : 0 });
+  const trail = useTrail(items.length, {
+    from: { opacity: 1 },
+    to: { opacity: 0 },
+    reverse: toggle
+  });
   return (
     <div>
       <Container>
@@ -536,7 +540,7 @@ export function TrailAnimation() {
 
 <FullScreenCode>
 
-```js
+```jsx
 export function ChainAnimation() {
   const [toggle, setToggle] = React.useState(false);
   const containerSpringRef = React.useRef();
@@ -556,7 +560,7 @@ export function ChainAnimation() {
 
 <FullScreenCode>
 
-```js
+```jsx
   const items = [{ name: 'A' }, { name: 'B' }, { name: 'C' }];
   const itemSpringRef = React.useRef();
   const itemsSpring = useTransition(
@@ -582,7 +586,7 @@ export function ChainAnimation() {
 ---
 <FullScreenCode>
 
-```js
+```jsx
 <animated.div
   style={{
     width: containerSpring.width,
@@ -615,7 +619,7 @@ export function ChainAnimation() {
 
 <FullScreenCode>
 
-```js
+```jsx
 import { Illustration, Polygon, Anchor } from 'react-zdog';
 import { useSpring, a } from 'react-spring/zdog';
 
@@ -643,6 +647,35 @@ function Animation() {
 # Animating Threejs
 
 <Three />
+
+---
+
+<FullScreenCode>
+
+```jsx
+import { Canvas } from 'react-three-fiber';
+import { useSpring, animated } from 'react-spring/three';
+
+function Octahedron({ toggle }) {
+  const { color, pos, ...props } = useSpring({
+    pos: toggle ? [0, 0, 2] : [0, 0, 0],
+    scale: toggle ? [3, 3, 3] : [1, 1, 1],
+    rotation: toggle
+      ? [THREE.Math.degToRad(180), 0, THREE.Math.degToRad(45)]
+      : [0, 0, 0]
+  });
+  return (
+    <group>
+      <animated.mesh {...props}>
+        <octahedronGeometry attach="geometry" />
+        <meshStandardMaterial attach="material" color="grey" transparent />
+      </animated.mesh>
+    </group>
+  );
+}
+```
+
+</FullScreenCode>
 
 ---
 

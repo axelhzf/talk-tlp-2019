@@ -1,42 +1,52 @@
 import React from 'react';
 import { Button } from './Button';
+import { theme } from './theme';
+import { gradients } from './colors';
+
+const Code = theme.components.code;
+const Pre = theme.components.pre;
 
 export function BasicAnimation() {
   const [pos, setPos] = React.useState(0);
   return (
     <div>
-      <div>
-        <div css={{ display: 'flex', justifyContent: 'center', height: 200 }}>
-          <div
-            css={theme => ({
-              width: 50,
-              height: 50,
-              borderRadius: '100% ',
-              backgroundColor: theme.colors.primary,
-              transform: `translateY(${pos})`,
-              transition: 'transform linear 300ms'
-            })}
-          />
-        </div>
-        <Button
-          onClick={() => {
-            if (pos === 0) {
-              setPos('150px');
-            } else {
-              setPos(0);
-            }
-          }}
-        >
-          Animate
-        </Button>
+      <div
+        css={{
+          display: 'flex',
+          justifyContent: 'center',
+          height: 300
+        }}
+      >
+        <div
+          css={theme => ({
+            width: 100,
+            height: 100,
+            borderRadius: '100% ',
+            background: gradients[3],
+            transform: `translateY(${pos})`,
+            transition: 'transform linear 300ms'
+          })}
+        />
       </div>
-      <pre>
-        <code>{`
-transform: translate(${pos});
+      <Button
+        css={{ marginBottom: '1em' }}
+        onClick={() => {
+          if (pos === 0) {
+            setPos('150px');
+          } else {
+            setPos(0);
+          }
+        }}
+      >
+        Animate
+      </Button>
+      <Pre>
+        <Code>
+          {`transform: translate(${pos});
 transition: transform linear 300ms;
 `}
-        </code>
-      </pre>
+        </Code>
+      </Pre>
     </div>
   );
 }

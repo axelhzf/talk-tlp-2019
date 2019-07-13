@@ -8,7 +8,9 @@ export function TrailAnimation() {
   const [toggle, setToggle] = React.useState(true);
   const items = ['A', 'B', 'C', 'D'];
   const trail = useTrail(items.length, {
-    opacity: toggle ? 1 : 0
+    from: { opacity: 1 },
+    to: { opacity: 0 },
+    reverse: toggle
   });
   return (
     <div>
@@ -17,6 +19,7 @@ export function TrailAnimation() {
           return (
             <Square
               style={{ opacity }}
+              key={index}
               css={{
                 position: 'absolute',
                 width: 200,

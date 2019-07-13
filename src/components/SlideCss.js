@@ -18,7 +18,7 @@ export function SlideCss() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: gradients[1],
+            background: gradients[3],
             transition: down ? undefined : 'left linear 1000ms',
             borderRadius: 10,
             userSelect: 'none',
@@ -32,7 +32,7 @@ export function SlideCss() {
         </div>
         <div
           css={{
-            background: colors.purple30,
+            background: colors.magenta10,
             top: 0,
             left: 0,
             width: '100%',

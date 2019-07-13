@@ -26,7 +26,7 @@ export function SlideSpring() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: gradients[0],
+            background: gradients[7],
             borderRadius: 10,
             userSelect: 'none',
             display: 'flex',
@@ -39,7 +39,7 @@ export function SlideSpring() {
         </animated.div>
         <div
           css={{
-            background: colors.purple30,
+            background: colors.red10,
             top: 0,
             left: 0,
             width: '100%',
