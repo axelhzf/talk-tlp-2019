@@ -3,9 +3,12 @@ import { future, swiss } from '@mdx-deck/themes';
 import { Global, css } from '@emotion/core';
 import { colors } from './colors';
 import { Flex, Box } from '@rebass/emotion';
+import { syntaxHighlighterPrism } from '@mdx-deck/themes'
+import { prismTheme } from './prismTheme';
 
-export const theme = {
+export const theme = syntaxHighlighterPrism({
   ...future,
+  prism: { style: prismTheme },
   colors: {
     background: '#ffffff',
     blue: '#0062ff',
@@ -72,7 +75,8 @@ export const theme = {
   heading: {
     fontWeight: 600,
     color: '#171717',
-    textAlign: 'left'
+    textAlign: 'left',
+    marginTop: 0
   },
   h1: {
     textDecoration: 'underline',
@@ -86,9 +90,9 @@ export const theme = {
     paddingLeft: 20
   },
   Slide: {
-    padding: 20
+    padding: '1em'
   }
-};
+});
 
 export const Layout = props => {
   return (
@@ -122,3 +126,4 @@ export function ThemeGlobal() {
     />
   );
 }
+

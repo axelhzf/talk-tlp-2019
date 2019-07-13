@@ -1,8 +1,13 @@
 import React from 'react';
 import { useSpring, animated, interpolate, config } from 'react-spring';
 import { useGesture } from 'react-with-gesture';
-import { colors } from './colors';
+import { colors, gradients } from './colors';
 import { Flex, Box } from '@rebass/emotion';
+import { theme } from './theme';
+
+const Code = theme.components.code;
+const Pre = theme.components.pre;
+
 
 const presets = Object.keys(config);
 
@@ -30,20 +35,21 @@ export function SpringPresets() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: colors.purple50,
+            background: gradients[2],
             transition: down ? undefined : 'left linear 1000ms',
             borderRadius: 10,
             userSelect: 'none',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            fontSize: '.5em'
           })}
         >
           Slide
         </animated.div>
         <div
           css={{
-            background: colors.purple30,
+            background: colors.blue30,
             top: 0,
             left: 0,
             width: '100%',
@@ -61,9 +67,9 @@ export function SpringPresets() {
           ))}
         </select>
         <Box>
-          <pre>
-            <code>{JSON.stringify(config[preset], null, 2)}</code>
-          </pre>
+          <Pre>
+            <Code>{JSON.stringify(config[preset], null, 2)}</Code>
+          </Pre>
         </Box>
       </Box>
     </Flex>

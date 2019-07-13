@@ -1,6 +1,5 @@
-import { Flex, Box } from '@rebass/emotion';
-import { Split } from 'mdx-deck/layouts';
-
+import { Flex, Box, Text } from '@rebass/emotion';
+import { Split, FullScreenCode } from 'mdx-deck/layouts';
 export { theme } from './components/theme';
 import { Tweet } from './components/Tweet';
 import { Layout, ThemeGlobal } from './components/theme';
@@ -198,9 +197,45 @@ https://cubic-bezier.com
 
 ---
 
+<Flex width="100vw" p="1em" flexDirection="column">
+
 # Keyframes animations
 
-<Keyframes />
+<Flex width="100%">
+
+<Box width={500}>
+  <Keyframes />
+</Box>
+
+<Box flex="1" fontSize="70%">
+
+```css
+@keyframes fancy {
+  0%,
+  100% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(300px) translateY(0);
+  }
+  50% {
+    transform: translateX(300px) translateY(300px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(0) translateY(300px);
+  }
+}
+div {
+  animation: fancy 4s ease-in-out infinite;
+}
+```
+
+</Box>
+
+</Flex>
+</Flex>
 
 ---
 
@@ -212,22 +247,28 @@ https://cubic-bezier.com
 
 # Web Animations API
 
-
-```
-var keyframes = [
-  { opacity: 0 },
-  { opacity: 1 }
-];
+```javascript
+var keyframes = [{ opacity: 0 }, { opacity: 1 }];
 element.animate(keyframes, 1000);
 ```
 
-<Reference href="https://css-tricks.com/css-animations-vs-web-animations-api/">CSS Animations vs Web Animations API</Reference>
+<Reference href="https://css-tricks.com/css-animations-vs-web-animations-api/">
+  CSS Animations vs Web Animations API
+</Reference>
 
 ---
 
 # User interactions
 
 <SlideCss />
+
+<Box mt="1em">
+
+```css
+transition: linear 1000ms;
+```
+
+</Box>
 
 ---
 
@@ -301,7 +342,9 @@ The force is proportional to the extension
 
 There’s also this damping force which slows down the motion.
 
+<Text fontWeight="600">
 Ff = −cv
+</Text>
 
 <Reference href="https://en.wikipedia.org/wiki/Damping_ratio#Example:_mass.E2.80.93spring.E2.80.93damper">
   Dumping Force Wikipedia
@@ -323,7 +366,7 @@ Ff = −cv
 
 # react-spring
 
-![](assets/react-spring.png)
+<img src="assets/react-spring.png" style={{ height: '5em' }}/>
 
 https://www.react-spring.io
 
@@ -334,6 +377,37 @@ https://www.react-spring.io
 # useSpring()
 
 <SlideSpring />
+
+---
+
+<FullScreenCode>
+
+```js
+import { useSpring, animated, interpolate } from 'react-spring';
+import { useGesture } from 'react-with-gesture';
+
+function Component() {
+  const [bind, { delta, down }] = useGesture();
+  const { x } = useSpring({
+    x: down ? delta[0] : 0
+  });
+
+  return (
+    <Container>
+      <animated.div
+        {...bind()}
+        style={{
+          transform: x.interpolate(x => `translate3d($\{x}px,0,0)`)
+        }}
+      >
+        Slide
+      </animated.div>
+    </Container>
+  );
+}
+```
+
+</FullScreenCode>
 
 ---
 

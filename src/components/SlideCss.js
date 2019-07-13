@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGesture } from 'react-with-gesture';
-import { colors } from './colors';
+import { colors, gradients } from './colors';
 import { Flex } from '@rebass/emotion';
 
 export function SlideCss() {
@@ -18,20 +18,21 @@ export function SlideCss() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: colors.teal50,
+            background: gradients[1],
             transition: down ? undefined : 'left linear 1000ms',
             borderRadius: 10,
             userSelect: 'none',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            fontSize: '.5em'
           })}
         >
           Slide
         </div>
         <div
           css={{
-            background: colors.teal30,
+            background: colors.purple30,
             top: 0,
             left: 0,
             width: '100%',
@@ -40,9 +41,6 @@ export function SlideCss() {
           }}
         />
       </div>
-      <pre>
-        <code>{`transition: linear 1000ms;`}</code>
-      </pre>
     </Flex>
   );
 }

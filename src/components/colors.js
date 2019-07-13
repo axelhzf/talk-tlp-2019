@@ -104,3 +104,9 @@ export const colors = {
   white0: '#ffffff',
   yellow20: '#fdd13a'
 };
+
+export const gradients = [
+  'linear-gradient(0deg, rgb(255, 0, 136), rgb(221, 0, 238))',
+  'linear-gradient(180deg, #f08, #d0e, #91f, #70f, #40f, #05f, #09f) center 20% / 100% 500% no-repeat',
+  'linear-gradient(180deg, #f08, #d0e, #91f, #70f, #40f, #05f, #09f) center 100% / 100% 500% no-repeat'
+];

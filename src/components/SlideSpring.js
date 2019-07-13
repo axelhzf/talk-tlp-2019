@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSpring, animated, interpolate } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import { useGesture } from 'react-with-gesture';
-import { colors } from './colors';
+import { colors, gradients } from './colors';
 import { Flex } from '@rebass/emotion';
 
 export function SlideSpring() {
@@ -17,7 +17,7 @@ export function SlideSpring() {
         <animated.div
           {...bind()}
           style={{
-            transform: interpolate([x], x => `translate3d(${x}px,0,0)`)
+            transform: x.interpolate(x => `translate3d(${x}px,0,0)`)
           }}
           css={theme => ({
             position: 'absolute',
@@ -26,13 +26,13 @@ export function SlideSpring() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: colors.purple50,
-            transition: down ? undefined : 'left linear 1000ms',
+            background: gradients[0],
             borderRadius: 10,
             userSelect: 'none',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            fontSize: '.5em'
           })}
         >
           Slide
