@@ -2,31 +2,41 @@ import React from 'react';
 import { useTrail } from 'react-spring';
 import { Square } from './Square';
 import { Button } from './Button';
+import { gradients } from './colors';
 
 export function TrailAnimation() {
-  const items = ['A', 'B', 'C', 'D'];
   const [toggle, setToggle] = React.useState(true);
-
+  const items = ['A', 'B', 'C', 'D'];
   const trail = useTrail(items.length, {
     opacity: toggle ? 1 : 0
   });
-
   return (
     <div>
-      <div css={{ position: 'relative', height: 50 }}>
+      <div css={{ position: 'relative', height: 200 }}>
         {trail.map(({ opacity }, index) => {
           return (
             <Square
               style={{ opacity }}
-              css={{ position: 'absolute', left: index * 60 }}
-            />
+              css={{
+                position: 'absolute',
+                width: 200,
+                height: 200,
+                left: index * (200 + 10),
+                background: gradients[5 + index],
+                color: '#fff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 400
+              }}
+            >
+              {items[index]}
+            </Square>
           );
         })}
       </div>
 
-      <Button onClick={() => setToggle(t => !t)}>
-        {toggle ? 'Hide' : 'Show'}
-      </Button>
+      <Button onClick={() => setToggle(t => !t)}>Animate</Button>
     </div>
   );
 }

@@ -427,15 +427,104 @@ function Component() {
 
 ---
 
+<FullScreenCode>
+
+```js
+import { useTransition } from 'react-spring';
+
+function Component() {
+  const [visible, setVisible] = React.useState(true);
+  const transitions = useTransition(visible, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
+  });
+  return (
+    <>
+      <>
+        {transitions.map(({ item, key, props }) => item && (
+          <animated.div key={key} style={props} />
+        ))}
+      </>
+      <Button onClick={() => setVisible(v => !v)}>Animate</Button>
+    </>
+  );
+}
+
+```
+
+</FullScreenCode>
+
+
+---
+
 # Auto Animations
 
 <AutoAnimation />
 
 ---
 
+<FullScreenCode>
+
+```js
+function TabPane(props) {
+  const { isOpen } = props;
+  const [bind, { height: viewHeight }] = useMeasure();
+  const { height, opacity } = useSpring({
+    from: { opacity: 0, height: 0 },
+    to: {
+      opacity: isOpen ? 1: 0,
+      height: isOpen ? viewHeight : 0,
+    },
+    immediate: !isOpen
+  });
+  return (
+    <animated.div
+      style={{ opacity, height }}
+    >
+      <div {...bind} children={props.children} />
+    </animated.div>
+  );
+}
+```
+
+</FullScreenCode>
+
+---
+
 # Trail Animations
 
 <TrailAnimation />
+
+
+---
+
+<FullScreenCode>
+
+```js
+export function TrailAnimation() {
+  const [toggle, setToggle] = React.useState(true);
+  const items = ['A', 'B', 'C', 'D'];
+  const trail = useTrail(items.length, { opacity: toggle ? 1 : 0 });
+  return (
+    <div>
+      <Container>
+        {trail.map(({ opacity }, index) => {
+          return (
+            <Square style={{ opacity }} >
+              {items[index]}
+            </Square>
+          );
+        })}
+      </Container>
+      <Button onClick={() => setToggle(t => !t)}>Animate</Button>
+    </div>
+  );
+}
+```
+
+</FullScreenCode>
+
 
 ---
 
@@ -445,11 +534,109 @@ function Component() {
 
 ---
 
+<FullScreenCode>
+
+```js
+export function ChainAnimation() {
+  const [toggle, setToggle] = React.useState(false);
+  const containerSpringRef = React.useRef();
+  const containerSpring = useSpring({
+    ref: containerSpringRef,
+    from: { width: '20%', height: '20%', background: gradients[0] },
+    to: {
+      width: toggle ? '80%' : '20%',
+      background: toggle ? gradients[1] : gradients[0]
+    }
+  });
+```
+
+</FullScreenCode>
+
+---
+
+<FullScreenCode>
+
+```js
+  const items = [{ name: 'A' }, { name: 'B' }, { name: 'C' }];
+  const itemSpringRef = React.useRef();
+  const itemsSpring = useTransition(
+    toggle ? items : [], item => item.name, {
+      ref: itemSpringRef,
+      unique: true,
+      trail: 300 / items.length,
+      from: { opacity: 0, transform: 'scale(0)' },
+      enter: { opacity: 1, transform: 'scale(1)' },
+      leave: { opacity: 0, transform: 'scale(0)' }
+    }
+  );
+
+  useChain(
+    toggle
+      ? [containerSpringRef, itemSpringRef]
+      : [itemSpringRef, containerSpringRef]
+  );
+```
+
+</FullScreenCode>
+
+---
+<FullScreenCode>
+
+```js
+<animated.div
+  style={{
+    width: containerSpring.width,
+    background: containerSpring.background,
+  }}
+>
+  {itemsSpring.map(({ item, key, props }, index) => {
+    return (
+      <animated.div
+        key={key}
+        style={props}
+      />
+    );
+  })}
+</animated.div>
+```
+
+
+</FullScreenCode>
+
+---
+
 # Animating Zdog
 
 <Zdog />
 
-https://codesandbox.io/s/nervous-feather-vk9uh
+<Reference href="https://codesandbox.io/s/nervous-feather-vk9uh">Zdog Example</Reference>
+
+---
+
+<FullScreenCode>
+
+```js
+import { Illustration, Polygon, Anchor } from 'react-zdog';
+import { useSpring, a } from 'react-spring/zdog';
+
+function Animation() {
+  const [toggle, setToggle] = React.useState(true);
+  const spring = useSpring({
+    from: { rotate: 0 },
+    to: { rotate: toggle ? 0 : Math.PI }
+  });
+
+  return (
+    <a.Anchor
+      rotate={spring.rotate.interpolate(r => ({ y : r, z: r }))}
+    >
+      <Polygon />
+    </a.Anchor>
+  )
+}
+```
+
+</FullScreenCode>
 
 ---
 

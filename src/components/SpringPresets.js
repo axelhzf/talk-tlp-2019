@@ -35,7 +35,7 @@ export function SpringPresets() {
             width: '100%',
             height: '100%',
             color: theme.colors.text4,
-            background: gradients[2],
+            background: gradients[5],
             transition: down ? undefined : 'left linear 1000ms',
             borderRadius: 10,
             userSelect: 'none',
@@ -49,7 +49,7 @@ export function SpringPresets() {
         </animated.div>
         <div
           css={{
-            background: colors.blue30,
+            background: colors.blue10,
             top: 0,
             left: 0,
             width: '100%',

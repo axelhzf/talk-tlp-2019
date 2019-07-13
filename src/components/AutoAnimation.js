@@ -1,29 +1,29 @@
 import { Flex, Box, Text } from '@rebass/emotion';
 import React from 'react';
-import { colors } from './colors';
+import { colors, gradients } from './colors';
 import { usePrevious } from './usePrevious';
 import { useMeasure } from './useMeasure';
 import { useSpring, animated } from 'react-spring';
 
 export function AutoAnimation() {
-  const [active, setActive] = React.useState('blue');
+  const [active, setActive] = React.useState('A');
 
   return (
-    <Flex flexDirection="column" justifyContent="left" alignItems="left">
+    <Flex flexDirection="column" justifyContent="left" alignItems="left" css={{ height: 300 }}>
       <Flex fontSize={16}>
-        <Tab onClick={() => setActive('blue')}>Blue</Tab>
-        <Tab onClick={() => setActive('green')}>Green</Tab>
-        <Tab onClick={() => setActive('magenta')}>Magenta</Tab>
+        <Tab onClick={() => setActive('A')}>A</Tab>
+        <Tab onClick={() => setActive('B')}>B</Tab>
+        <Tab onClick={() => setActive('C')}>C</Tab>
       </Flex>
-      <div css={{ position: 'relative' }}>
-        <TabPane isOpen={active === 'blue'}>
-          <Content css={{ height: 50, background: colors.blue30 }}>Blue</Content>
+      <div css={{ position: 'relative', color: '#fff', fontWeight: 'bold' }}>
+        <TabPane isOpen={active === 'A'}>
+          <Content css={{ height: 50, background: gradients[4] }}>A</Content>
         </TabPane>
-        <TabPane isOpen={active === 'green'}>
-          <Content css={{ height: 150, background: colors.green30 }}>Green</Content>
+        <TabPane isOpen={active === 'B'}>
+          <Content css={{ height: 150, background: gradients[5] }}>B</Content>
         </TabPane>
-        <TabPane isOpen={active === 'magenta'}>
-          <Content css={{ height: 200, background: colors.magenta30 }}>Magenta</Content>
+        <TabPane isOpen={active === 'C'}>
+          <Content css={{ height: 200, background: gradients[6] }}>C</Content>
         </TabPane>
       </div>
     </Flex>
@@ -46,6 +46,8 @@ function Tab(props) {
         fontSize: 16,
         cursor: 'pointer',
         marginRight: 10,
+        paddingLeft: 40,
+        paddingRight: 40,
         '&:hover': {
           background: theme.colors.hoverPrimary
         }
@@ -56,9 +58,8 @@ function Tab(props) {
 
 function TabPane(props) {
   const { isOpen } = props;
-  const previous = usePrevious(isOpen);
   const [bind, { height: viewHeight }] = useMeasure();
-  const { height, opacity, transform } = useSpring({
+  const { height, opacity } = useSpring({
     from: { opacity: 0, height: 0 },
     to: {
       opacity: isOpen ? 1: 0,
@@ -76,12 +77,9 @@ function TabPane(props) {
         overflow: 'hidden',
         fontSize: 20
       }}
-      style={{
-        opacity,
-        height: isOpen && previous === isOpen ? 'auto' : height
-      }}
+      style={{ opacity, height }}
     >
-      <animated.div style={{ transform }} {...bind} children={props.children} />
+      <div {...bind} children={props.children} />
     </animated.div>
   );
 }

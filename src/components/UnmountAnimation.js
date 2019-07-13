@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from './Button';
 import { Square } from './Square';
 import { useTransition } from 'react-spring';
+import { gradients } from './colors';
 
 export function UnmountAnimation() {
   const [visible, setVisible] = React.useState(true);
@@ -13,21 +14,28 @@ export function UnmountAnimation() {
   });
   return (
     <div>
-      <Button onClick={() => setVisible(v => !v)}>
-        {visible ? 'Hide square' : 'Show square'}
-      </Button>
-      <div css={{ display: 'flex', marginTop: 10, height: 100 }}>
+      <div css={{ display: 'flex', marginTop: 10, height: 200, width: 200 }}>
         {transitions.map(
           ({ item, key, props }) =>
             item && (
               <Square
                 key={key}
                 style={props}
-                css={{ position: 'absolute', left: '50%' }}
+                css={{
+                  width: 200,
+                  height: 200,
+                  position: 'absolute',
+                  background: gradients[3],
+                  left: '50%',
+                  marginLeft: -100
+                }}
               />
             )
         )}
       </div>
+      <Button onClick={() => setVisible(v => !v)}>
+        Animate
+      </Button>
     </div>
   );
 }
