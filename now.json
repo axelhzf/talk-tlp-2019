@@ -8,6 +8,8 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "dist/$1" }
+    { "src": "/assets/(.*)", "dest": "dist/assets/$1" },
+    { "src": "/(.*)\\.js", "dest": "dist/$1.js" },
+    { "src": "/(.*)", "dest": "dist/index.html" }
   ]
 }

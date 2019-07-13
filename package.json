@@ -5,7 +5,7 @@
   "scripts": {
     "start": "mdx-deck src/presentation.mdx",
     "clean": "rm -rf dist",
-    "build": "mdx-deck build --d dist src/presentation.mdx",
+    "build": "mdx-deck build --d dist src/presentation.mdx && cp -r src/assets dist",
     "deploy": "yarn build && now --target production"
   },
   "dependencies": {
