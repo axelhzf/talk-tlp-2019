@@ -20,7 +20,7 @@ import { ChainAnimation } from './components/ChainAnimation';
 import { Zdog } from './components/Zdog';
 import { Three } from './components/Three';
 import { Analytics } from './components/Analytics';
-import { Root } from './components/Root';
+import { Video } from './components/Video';
 
 <ThemeGlobal />
 
@@ -48,27 +48,64 @@ Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
 
 ---
 
-## Why native feels better than web apps?
+## Why native apps feels better than webs?
 
 ---
+
+<Split>
 
 # Animations using SwiftUI
 
 <Tweet tweetId="1142539362875392001" />
 
+</Split>
+
 ---
+
+<Split>
+
+<Tweet tweetId="1145465025194332165" />
 
 # The tools for native animations are superior
 
-<Tweet tweetId="1145465025194332165" />
+</Split>
 
 ---
 
 # Why animation matters?
 
-- Motion helps make a UI expressive
-- Motion helps orient users by showing how elements are related to one another
-- Motion focuses attention on what's important
+---
+
+<Split>
+
+# Animations can make objects feel more natural
+
+<Video src="assets/scroll.mp4" style={{ height: '90vh' }}/>
+
+</Split>
+
+
+---
+
+<Split>
+
+# Motion can show how elements are related
+
+<Video src="assets/relation.mp4" style={{ height: '90vh' }}/>
+
+</Split>
+
+---
+
+<Split>
+
+# Motion focuses attention on what's important
+
+<Video src="assets/feedback-password.mp4" style={{ height: '90vh' }}/>
+
+<Reference href="https://material.io/design/motion/#usage">Material Guideline</Reference>
+
+</Split>
 
 ---
 
@@ -88,7 +125,7 @@ Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
 
 ---
 
-# CSS transition
+# CSS Transitions
 
     div {
         transition:
@@ -101,7 +138,7 @@ Axel Hernández Ferrera ([@axelhzf](https://twitter.com/axelhzf))
 
 ---
 
-# CSS Animations
+# CSS Transitions
 
 <BasicAnimation />
 
@@ -168,15 +205,12 @@ ease-in-out
 
 A Bézier curve is a parametric curve used to model smooth curves
 
-<img
-  src="https://wikimedia.org/api/rest_v1/media/math/render/svg/504c44ca5c5f1da2b6cb1702ad9d1afa27cc1ee0"
-  width="200%"
-/>
+<img src="assets/bezier.svg" width="200%" />
 
 <br/>
 <br/>
 
-![](https://upload.wikimedia.org/wikipedia/commons/d/db/B%C3%A9zier_3_big.gif)
+![](assets/bezier.gif)
 
 <Reference href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve#Cubic_B.C3.A9zier_curves">
   Bezier Curves in Wikipedia
@@ -279,18 +313,18 @@ transition: linear 1000ms;
 
 ---
 
+<Split>
+
+# Animations based on durations have limitations
+
 <Tweet tweetId="566736015188963328" />
+
+</Split>
 
 ---
 
-<video
-  autoPlay={true}
-  loop={true}
-  muted
-  style={{ width: '100vw', height: '100vh' }}
->
-  <source src="assets/carbonMotionDuration.mp4" type="video/mp4" />
-</video>
+
+<Video src="assets/carbonMotionDuration.mp4"/>
 
 <Reference href="https://www.carbondesignsystem.com/guidelines/motion/basics#duration">
   IBM Carbon Design System Motion
