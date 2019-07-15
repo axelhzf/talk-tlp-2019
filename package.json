@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build": "mdx-deck build --d dist src/presentation.mdx && cp -r src/assets dist",
     "deploy": "now --target production",
-    "now-build": "yarn build"
+    "now-build": "npm run build"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.14",
