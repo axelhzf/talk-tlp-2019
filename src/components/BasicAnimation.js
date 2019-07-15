@@ -42,7 +42,7 @@ export function BasicAnimation() {
       </Button>
       <Pre>
         <Code>
-          {`transform: translate(${pos});
+          {`transform: translateY(${pos});
 transition: transform linear 300ms;
 `}
         </Code>
